@@ -17,6 +17,38 @@ public class IndyFitCalc {
         switch(menu) {
             case 1: BMI();
                     break;
+            case 2: IBW();
+                    break;
+            case 3: BMR();
+                    break;
+            case 4: calorieCalculator();
+                    break;
+            case 5: BFP();
+                    break;
+            case 6: BSA();
+                    break;
+            case 7: carbReq();
+                    break;
+            case 8: proteinReq();
+                    break;
+            case 9: fatReq();
+                    break;
+            case 10: TDEE();
+                     break;
+            case 11: waistHip();
+                     break;
+            case 12: BAI();
+                     break;
+            case 13: BAC();
+                     break;
+            case 14: LBM();
+                     break;
+            case 15: FFMI();
+                     break;
+            case 16: MHR();
+                     break;
+            default: System.out.println("Error. Try again.");
+                     break;
         }
     }
     

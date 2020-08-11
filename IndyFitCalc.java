@@ -519,6 +519,68 @@ public class IndyFitCalc {
 
     }
 
-    
+    public void LBM(){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("The Lean Body Mass assessment determines a person's estimated lean body mass (LBM) based on body weight, height, gender, and age.");
+        System.out.println();
+
+        System.out.print("Enter your weight in kg: ");
+        double weight = sc.nextDouble();
+
+        System.out.print("Enter your height in cm: ");
+        double height = sc.nextDouble();
+
+        System.out.print("Male or female (M/F): ");
+        char gender = sc.nextLine().charAt(0);
+
+        double ELBM = 0.0;
+
+        if (gender == 'm' || gender == 'M') {
+            ELBM = 0.407*weight + 0.267*height - 19.2;
+        }
+        else if (gender == 'F' || gender == 'f') {
+            ELBM = 0.252*weight + 0.4737*height - 48.3;
+        }
+
+        System.out.println("Your Estimated Lean Body Mass is "+ELBM+".");
+
+    }
+
+    public void FFMI(){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("FFMI is an alternative to body mass index, which helps in estimates a person's muscle mass.");
+        System.out.println();
+
+        System.out.print("Enter your weight in kg: ");
+        double weight = sc.nextDouble();
+
+        System.out.print("Enter your height in cm: ");
+        double height = sc.nextDouble();
+
+        System.out.print("Enter your body fat in percentage: ");
+        double bfp = sc.nextDouble();
+
+        double FFMI = 0.0;
+
+        FFMI = (weight*(1-(bfp/100)))/Math.pow(height, 2);
+
+        System.out.println("Your Fat Free Mass Index is "+FFMI+".");
+    }
+
+    public void MHR(){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Maximum heart rate (MHR) is most accurately measured using a cardiac stress test, which involves measuring a person's heart function (including heart rate) at periodically increasing levels of exercise.");
+        System.out.println();
+
+        System.out.print("Enter your age in years: ");
+        int age = sc.nextInt();
+
+        int MHR = 220 - age;
+
+        System.out.println("Your Estimated Maximum Heart Rate formula is "+MHR+".");
+    }
 }
     

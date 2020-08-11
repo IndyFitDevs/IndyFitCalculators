@@ -97,7 +97,7 @@ public class IndyFitCalc {
         System.out.println();
 
         System.out.print("Male or female (M/F): ");
-        char gender = sc.nextLine().charAt(0);
+        char gender = sc.next().charAt(0);
 
         double idealWeight = 0.0;
 
@@ -125,7 +125,7 @@ public class IndyFitCalc {
         System.out.println();
 
         System.out.print("Male or female (M/F): ");
-        char gender = sc.nextLine().charAt(0);
+        char gender = sc.next().charAt(0);
 
         double BMR = 0.0;
 
@@ -161,7 +161,7 @@ public class IndyFitCalc {
         System.out.println();
 
         System.out.print("Male or female (M/F): ");
-        char gender = sc.nextLine().charAt(0);
+        char gender = sc.next().charAt(0);
 
         double BMR = 0.0;
         double cc = 0.0;
@@ -217,7 +217,7 @@ public class IndyFitCalc {
         System.out.println();
 
         System.out.print("Male or female (M/F): ");
-        char gender = sc.nextLine().charAt(0);
+        char gender = sc.next().charAt(0);
 
         double BFP = 0.0;
 
@@ -281,7 +281,7 @@ public class IndyFitCalc {
         System.out.println();
         
         System.out.print("Male or female (M/F): ");
-        char gender = sc.nextLine().charAt(0);
+        char gender = sc.next().charAt(0);
 
         double BMR = 0.0;
         double cc = 0.0;
@@ -356,7 +356,7 @@ public class IndyFitCalc {
         System.out.println();
         
         System.out.print("Male or female (M/F): ");
-        char gender = sc.nextLine().charAt(0);
+        char gender = sc.next().charAt(0);
 
         double BMR = 0.0;
         double cc = 0.0;
@@ -415,7 +415,7 @@ public class IndyFitCalc {
         System.out.println();
 
         System.out.print("Male or female (M/F): ");
-        char gender = sc.nextLine().charAt(0);
+        char gender = sc.next().charAt(0);
 
         double BMR = 0.0;
         double cc = 0.0;
@@ -480,7 +480,7 @@ public class IndyFitCalc {
         whr = waistCirc/hipCirc;
 
         System.out.print("Male or female (M/F): ");
-        char gender = sc.nextLine().charAt(0);
+        char gender = sc.next().charAt(0);
         
         String category = "Normal";
 
@@ -530,7 +530,7 @@ public class IndyFitCalc {
         double alc = sc.nextDouble();
 
         System.out.print("Male or female (M/F): ");
-        char gender = sc.nextLine().charAt(0);
+        char gender = sc.next().charAt(0);
 
         double BAC = 0.0;
         double r = 0.0;
@@ -577,7 +577,7 @@ public class IndyFitCalc {
         double height = sc.nextDouble();
 
         System.out.print("Male or female (M/F): ");
-        char gender = sc.nextLine().charAt(0);
+        char gender = sc.next().charAt(0);
 
         double ELBM = 0.0;
 

@@ -69,5 +69,42 @@ public class IndyFitCalc {
 
         System.out.println("Your ideal body weight (IBW) is "+idealWeight+".");
     }
+
+    public void BMR() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Basal Metabolic Rate (BMR) test helps to estimate the amount of energy your body burns at rest daily.");
+        System.out.println();
+
+        System.out.print("Male or female (M/F): ");
+        char gender = sc.nextLine().charAt(0);
+
+        double BMR = 0.0;
+
+        if (gender == 'm' || gender == 'M') {
+            System.out.print("Enter height in cm: ");
+            double height = sc.nextDouble();
+            System.out.print("Enter weight in kg: ");
+            double weight = sc.nextDouble();
+            System.out.print("Enter age in years: ");
+            double age = sc.nextDouble();
+
+            BMR = (88.362) + (13.397*weight) + (4.799*height) - (5.677*age);
+        }
+        else if (gender == 'F' || gender == 'f') {
+            System.out.print("Enter height in cm: ");
+            double height = sc.nextDouble();
+            System.out.print("Enter weight in kg: ");
+            double weight = sc.nextDouble();
+            System.out.print("Enter age in years: ");
+            double age = sc.nextDouble();
+
+            BMR = (447.593) + (9.247*weight) + (3.098*height) - (4.330*age);
+        }
+
+        System.out.println("Your Basal Metabolic Rate (BMR) is "+BMR+".");
+    }
+
+
 }
     

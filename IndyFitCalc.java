@@ -628,4 +628,3 @@ public class IndyFitCalc {
         System.out.println("Your Estimated Maximum Heart Rate formula is "+MHR+".");
     }
 }
-    

@@ -3,7 +3,7 @@ import java.lang.Math;
 
 public class IndyFitCalc {
     // main method
-    public void main() {
+    public static void main() {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Welcome to the Indy Fit Calculator!");
@@ -53,7 +53,7 @@ public class IndyFitCalc {
     }
     
     // method to check BMI of a user
-    public void BMI() {
+    public static void BMI() {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("BMI (Body Mass Index )is a screening tool that can indicate whether a person is underweight or if they have a healthy weight, excess weight, or obesity.");
@@ -90,7 +90,7 @@ public class IndyFitCalc {
     }
 
     // method to check ideal body weight
-    public void IBW() {
+    public static void IBW() {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("IBW tests help to the measurement the actual weight that the people need to maintain for maximal health.");
@@ -118,7 +118,7 @@ public class IndyFitCalc {
     }
 
     // method to check basal metabolic rate
-    public void BMR() {
+    public static void BMR() {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Basal Metabolic Rate (BMR) test helps to estimate the amount of energy your body burns at rest daily.");
@@ -154,7 +154,7 @@ public class IndyFitCalc {
     }
 
     // method to calculate calories
-    public void calorieCalculator() {
+    public static void calorieCalculator() {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("The Calorie Calculator can be used to estimate the number of calories a person needs to consume each day.");
@@ -210,7 +210,7 @@ public class IndyFitCalc {
     }
 
     // method to calculate body fat percentage
-    public void BFP(){
+    public static void BFP(){
         Scanner sc = new Scanner(System.in);
 
         System.out.println("The Body Fat percentage measure used to estimate total body fat percentage based on a specific formula.");
@@ -256,7 +256,7 @@ public class IndyFitCalc {
     }
 
     // method to calculate body surface area
-    public void BSA() {
+    public static void BSA() {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("The body surface area (BSA) measure or calculator helps to estimate the surface area of a human body.");
@@ -274,7 +274,7 @@ public class IndyFitCalc {
     }
 
     // method to check carb req
-    public void carbReq(){
+    public static void carbReq(){
         Scanner sc = new Scanner(System.in);
 
         System.out.println("The Carbohydrates calculator helps to estimates the required amounts of carbohydrates that a person needs each day.");
@@ -334,7 +334,7 @@ public class IndyFitCalc {
     }
 
     // method to check protein req
-    public void proteinReq() {
+    public static void proteinReq() {
         Scanner sc = new Scanner(System.in);
 
         System.out.println(" The Protein Calculator estimates the daily amount of dietary protein adults require to remain healthy.");
@@ -349,7 +349,7 @@ public class IndyFitCalc {
     }
 
     // method to check fat req
-    public void fatReq() {
+    public static void fatReq() {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("The Fat calculator helps to estimates the required amounts of fat that a person needs each day.");
@@ -408,7 +408,7 @@ public class IndyFitCalc {
         System.out.println("You should consume approximately "+fat+" grams of fat per day.");
     }
     
-    public void TDEE() {
+    public static void TDEE() {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Total Daily Energy Expenditure (TDEE) is an estimation of how many calories a person burns per day when exercise is taken into account.");
@@ -464,7 +464,7 @@ public class IndyFitCalc {
     }
 
     // method to calculate Waist to Hip ratio
-    public void waistHip(){
+    public static void waistHip(){
         Scanner sc = new Scanner(System.in);
 
         System.out.println("The waist-to-hip ratio (WHR) is a quick measure of fat distribution (especially on waist, hips, and buttocks) that may help indicate a person's overall health. It also helps to measure abdominal obesity.");
@@ -498,7 +498,7 @@ public class IndyFitCalc {
         System.out.println("Your Waist-to-Hip ratio is "+whr+" and falls under the "+category+" category.");
     }
 
-    public void BAI() {
+    public static void BAI() {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("The Body Adiposity Index (BAI) is a practical anthropometric method used to measure body fat percentage. ");
@@ -517,7 +517,7 @@ public class IndyFitCalc {
         System.out.println("Your Body Adiposity Index is approximately "+BAI+".");
     }
 
-    public void BAC() {
+    public static void BAC() {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Blood alcohol concentration (BAC) refers to the amount of alcohol present in the bloodstream.");
@@ -564,7 +564,7 @@ public class IndyFitCalc {
 
     }
 
-    public void LBM(){
+    public static void LBM(){
         Scanner sc = new Scanner(System.in);
 
         System.out.println("The Lean Body Mass assessment determines a person's estimated lean body mass (LBM) based on body weight, height, gender, and age.");
@@ -592,7 +592,7 @@ public class IndyFitCalc {
 
     }
 
-    public void FFMI(){
+    public static void FFMI(){
         Scanner sc = new Scanner(System.in);
 
         System.out.println("FFMI is an alternative to body mass index, which helps in estimates a person's muscle mass.");
@@ -614,7 +614,7 @@ public class IndyFitCalc {
         System.out.println("Your Fat Free Mass Index is "+FFMI+".");
     }
 
-    public void MHR(){
+    public static void MHR(){
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Maximum heart rate (MHR) is most accurately measured using a cardiac stress test, which involves measuring a person's heart function (including heart rate) at periodically increasing levels of exercise.");

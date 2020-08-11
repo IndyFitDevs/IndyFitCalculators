@@ -3,8 +3,21 @@ import java.lang.Math;
 
 public class IndyFitCalc {
     // main method
-    public static void main() {
-     
+    public void main() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Welcome to the Indy Fit Calculator!");
+        System.out.println();
+
+        System.out.println("Please pick from one of the following options: ");
+        System.out.println("1. Body Mass Index (BMI) Calculator \n2. Ideal Body Weight (IBW) Calculator \n3. Basal Metabolic Rate (BMR) Calculator \n4. Calorie Calculator \n5. Body Fat Percentage (BFP) Calculator \n6. Body Surface Area (BSA) Caclulator \n7. Carbohydrates Requirements Calcuator \n8. Protein Requirements Calcuator \n9. Fat Requirements Calcuator \n10. Total Daily Energy Expenditure (TDEE) Calculator \n11. Waist-to-Hip Ratio Calculator \n12. Body Adiposity Index (BAI) Calculator \n13. Blood Alcohol Concentration (BAC) Calculator \n14. Lean Body Mass (LBM) Calculator \n15. Fat Free Mass Index (FFMI) Calculator \n16. Maximum Heart Rate (MHR) Calculator");
+
+        int menu = sc.nextInt();
+
+        switch(menu) {
+            case 1: BMI();
+                    break;
+        }
     }
     
     // method to check BMI of a user

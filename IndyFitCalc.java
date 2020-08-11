@@ -452,7 +452,73 @@ public class IndyFitCalc {
 
         System.out.println("Your Waist-to-Hip ratio is "+whr+" and falls under the "+category+" category.");
     }
-    
 
+    public void BAI() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("The Body Adiposity Index (BAI) is a practical anthropometric method used to measure body fat percentage. ");
+        System.out.println();
+
+        System.out.print("Enter hip circumference in cm: ");
+        double hipCirc = sc.nextDouble();
+
+        System.out.print("Enter height in metres: ");
+        double height = sc.nextDouble();
+
+        double BAI = 0.0;
+
+        BAI = (hipCirc/(Math.pow(height, 1.5))) - 18;
+
+        System.out.println("Your Body Adiposity Index is approximately "+BAI+".");
+    }
+
+    public void BAC() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Blood alcohol concentration (BAC) refers to the amount of alcohol present in the bloodstream.");
+        System.out.println();
+
+        System.out.print("Enter your weight in grams: ");
+        double weight = sc.nextDouble();
+
+        System.out.print("Enter alcohol consumed in grams: ");
+        double alc = sc.nextDouble();
+
+        System.out.print("Male or female (M/F): ");
+        char gender = sc.nextLine().charAt(0);
+
+        double BAC = 0.0;
+        double r = 0.0;
+
+        if (gender == 'm' || gender == 'M') {
+            r = 0.68;
+        }
+        else if (gender == 'F' || gender == 'f') {
+            r = 0.55;
+        }
+
+        BAC = ((alc)/(weight*r))*100;
+
+        String category = "";
+
+        if (BAC == 0) {
+            category = "Sober";
+        }
+        else if (BAC > 0.0 && BAC < 0.08) {
+            category = "Legally Intoxicated";
+        }
+        else if (BAC >= 0.08 && BAC < 0.40) {
+            category = "Very Impaired";
+        }
+        else if (BAC >= 0.40) {
+            category = "At risk for serious complications";
+        }
+
+        System.out.println("With a Blood Alcohol Concentraion of "+BAC+"%, you are classified as "+category+".");
+
+
+    }
+
+    
 }
     

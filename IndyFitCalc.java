@@ -65,7 +65,7 @@ public class IndyFitCalc {
         System.out.print("Enter your height in metres: ");
         double height = sc.nextDouble();
 
-        double BMI = (weight)/(height*height);
+        double BMI = (weight)/(Math.pow(height, 2));
         BMI = Math.floor(BMI * 100) / 100;
 
         String category = "";
@@ -228,7 +228,7 @@ public class IndyFitCalc {
             System.out.print("Enter your weight in kg: ");
             double weight = sc.nextDouble();
 
-            System.out.print("Enter your height in metres: ");
+            System.out.print("Enter your height in cm: ");
             double height = sc.nextDouble();
 
             double BMI = (weight)/(height*height);
@@ -243,7 +243,7 @@ public class IndyFitCalc {
             System.out.print("Enter your weight in kg: ");
             double weight = sc.nextDouble();
 
-            System.out.print("Enter your height in metres: ");
+            System.out.print("Enter your height in cm: ");
             double height = sc.nextDouble();
 
             double BMI = (weight)/(height*height);
@@ -265,7 +265,7 @@ public class IndyFitCalc {
         System.out.print("Enter your weight in kg: ");
         double weight = sc.nextDouble();
 
-        System.out.print("Enter your height in metres: ");
+        System.out.print("Enter your height in cm: ");
         double height = sc.nextDouble();
 
         double BSA =  (0.007184)*(Math.pow(weight, 0.425) )*(Math.pow(height, 0.725));
@@ -601,7 +601,7 @@ public class IndyFitCalc {
         System.out.print("Enter your weight in kg: ");
         double weight = sc.nextDouble();
 
-        System.out.print("Enter your height in cm: ");
+        System.out.print("Enter your height in metres: ");
         double height = sc.nextDouble();
 
         System.out.print("Enter your body fat in percentage: ");
@@ -609,7 +609,7 @@ public class IndyFitCalc {
 
         double FFMI = 0.0;
 
-        FFMI = (weight*(1-(bfp/100)))/Math.pow(height, 2);
+        FFMI = (weight*(1-(bfp/100))) / Math.pow((height), 2);
 
         System.out.println("Your Fat Free Mass Index is "+FFMI+".");
     }

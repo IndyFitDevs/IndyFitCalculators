@@ -160,6 +160,52 @@ public class IndyFitCalc {
         System.out.println("You should consume approximately "+cc+" calories per day.");
     }
 
+    public void BFP(){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("The Body Fat percentage measure used to estimate total body fat percentage based on a specific formula.");
+        System.out.println();
+
+        System.out.print("Male or female (M/F): ");
+        char gender = sc.nextLine().charAt(0);
+
+        double BFP = 0.0;
+
+        if (gender == 'm' || gender == 'M') {
+            System.out.print("Enter your age in years: ");
+            double age = sc.nextDouble();
+
+            System.out.print("Enter your weight in kg: ");
+            double weight = sc.nextDouble();
+
+            System.out.print("Enter your height in metres: ");
+            double height = sc.nextDouble();
+
+            double BMI = (weight)/(height*height);
+            BMI = Math.floor(BMI * 100) / 100;
+
+            BFP = (1.20*BMI)+(0.23)*(age-16.2);
+        }
+        else if (gender == 'F' || gender == 'f') {
+            System.out.print("Enter your age in years: ");
+            double age = sc.nextDouble();
+
+            System.out.print("Enter your weight in kg: ");
+            double weight = sc.nextDouble();
+
+            System.out.print("Enter your height in metres: ");
+            double height = sc.nextDouble();
+
+            double BMI = (weight)/(height*height);
+            BMI = Math.floor(BMI * 100) / 100;
+
+            BFP = (1.20*BMI)+(0.23)*(age-5.4);
+        }
+
+        System.out.println("Your Body Fat Percentage (BFP) is "+BFP+"%.");
+
+    }
+
 
 }
     

@@ -298,7 +298,161 @@ public class IndyFitCalc {
         System.out.print("Enter your weight in kg: ");
         double weight = sc.nextDouble();
 
+        double proteinReq = 0.8*weight;
 
+        System.out.println("You should consume approximately "+proteinReq+" grams of protein per day.");
     }
+
+    // method to check fat req
+    public void fatReq() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("The Fat calculator helps to estimates the required amounts of fat that a person needs each day.");
+        System.out.println();
+        
+        System.out.print("Male or female (M/F): ");
+        char gender = sc.nextLine().charAt(0);
+
+        double BMR = 0.0;
+        double cc = 0.0;
+
+        if (gender == 'm' || gender == 'M') {
+            System.out.print("Enter height in cm: ");
+            double height = sc.nextDouble();
+            System.out.print("Enter weight in kg: ");
+            double weight = sc.nextDouble();
+            System.out.print("Enter age in years: ");
+            double age = sc.nextDouble();
+
+            BMR = (88.362) + (13.397*weight) + (4.799*height) - (5.677*age);
+        }
+        else if (gender == 'F' || gender == 'f') {
+            System.out.print("Enter height in cm: ");
+            double height = sc.nextDouble();
+            System.out.print("Enter weight in kg: ");
+            double weight = sc.nextDouble();
+            System.out.print("Enter age in years: ");
+            double age = sc.nextDouble();
+
+            BMR = (447.593) + (9.247*weight) + (3.098*height) - (4.330*age);
+        }
+
+        System.out.println("Select an activity type:");
+        System.out.println("1. Sedentary (little or no exercise) \n2. Lightly Active (light exercise/sports 1-3 days/week) \n3. Moderately Active (moderate exercise/sports 3-5 days/week) \n4. Very Active (hard exercise/sports 6-7 days a week) \n5. Extra Active (very hard exercise/sports & physical job or 2x training)");
+        int activitySelector = sc.nextInt();
+
+        switch(activitySelector) {
+            case 1: cc = BMR*1.2;
+                    break;
+            case 2: cc = BMR*1.375;
+                    break;
+            case 3: cc = BMR*1.55;
+                    break;
+            case 4: cc = BMR*1.725;
+                    break;
+            case 5: cc = BMR*1.9;
+                    break;
+            default: cc = BMR*1.5;
+                    break;
+        }
+
+        cc = Math.ceil(cc);
+
+        double fat = 0.0;
+        fat = (cc*0.3)/9;
+        System.out.println("You should consume approximately "+fat+" grams of fat per day.");
+    }
+    
+    public void TDEE() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Total Daily Energy Expenditure (TDEE) is an estimation of how many calories a person burns per day when exercise is taken into account.");
+        System.out.println();
+
+        System.out.print("Male or female (M/F): ");
+        char gender = sc.nextLine().charAt(0);
+
+        double BMR = 0.0;
+        double cc = 0.0;
+
+        if (gender == 'm' || gender == 'M') {
+            System.out.print("Enter height in cm: ");
+            double height = sc.nextDouble();
+            System.out.print("Enter weight in kg: ");
+            double weight = sc.nextDouble();
+            System.out.print("Enter age in years: ");
+            double age = sc.nextDouble();
+
+            BMR = (88.362) + (13.397*weight) + (4.799*height) - (5.677*age);
+        }
+        else if (gender == 'F' || gender == 'f') {
+            System.out.print("Enter height in cm: ");
+            double height = sc.nextDouble();
+            System.out.print("Enter weight in kg: ");
+            double weight = sc.nextDouble();
+            System.out.print("Enter age in years: ");
+            double age = sc.nextDouble();
+
+            BMR = (447.593) + (9.247*weight) + (3.098*height) - (4.330*age);
+        }
+
+        System.out.println("Select an activity type:");
+        System.out.println("1. Sedentary (little or no exercise) \n2. Lightly Active (light exercise/sports 1-3 days/week) \n3. Moderately Active (moderate exercise/sports 3-5 days/week) \n4. Very Active (hard exercise/sports 6-7 days a week) \n5. Extra Active (very hard exercise/sports & physical job or 2x training)");
+        int activitySelector = sc.nextInt();
+
+        switch(activitySelector) {
+            case 1: cc = BMR*1.2;
+                    break;
+            case 2: cc = BMR*1.375;
+                    break;
+            case 3: cc = BMR*1.55;
+                    break;
+            case 4: cc = BMR*1.725;
+                    break;
+            case 5: cc = BMR*1.9;
+                    break;
+            default: cc = BMR*1.5;
+                    break;
+        }
+
+        System.out.println("You will burn approximately "+cc+" calories per day.");
+    }
+
+    // method to calculate Waist to Hip ratio
+    public void waistHip(){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("The waist-to-hip ratio (WHR) is a quick measure of fat distribution (especially on waist, hips, and buttocks) that may help indicate a person's overall health. It also helps to measure abdominal obesity.");
+        System.out.println();
+
+        System.out.print("Enter waist circumference in cm: ");
+        double waistCirc = sc.nextDouble();
+
+        System.out.print("Enter hip circumference in cm: ");
+        double hipCirc = sc.nextDouble();
+
+        double whr = 0.0;
+        whr = waistCirc/hipCirc;
+
+        System.out.print("Male or female (M/F): ");
+        char gender = sc.nextLine().charAt(0);
+        
+        String category = "Normal";
+
+        if (gender == 'm' || gender == 'M') {
+            if (whr>0.90) {
+                category = "Obese";
+            }
+        }
+        else if (gender == 'F' || gender == 'f') {
+            if (whr>0.85) {
+                category = "Obese";
+            }
+        }
+
+        System.out.println("Your Waist-to-Hip ratio is "+whr+" and falls under the "+category+" category.");
+    }
+    
+
 }
     

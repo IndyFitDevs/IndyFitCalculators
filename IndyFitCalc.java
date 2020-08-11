@@ -60,13 +60,13 @@ public class IndyFitCalc {
             System.out.print("Enter your height in cm: ");
             double height = sc.nextDouble();
 
-            idealWeight = (height-100) - ((height-100)-(height*0.1));
+            idealWeight = (height-100) - ((height-100)*0.1);
         }
         else if (gender == 'F' || gender == 'f') {
             System.out.print("Enter your height in cm: ");
             double height = sc.nextDouble();
 
-            idealWeight = (height-100) + ((height-100)-(height*0.15));
+            idealWeight = (height-100) + ((height-100)*0.15);
         }
 
         System.out.println("Your ideal body weight (IBW) is "+idealWeight+".");
@@ -228,6 +228,7 @@ public class IndyFitCalc {
         System.out.println("Your Body Surface Area (BSA) is "+BSA+".");
     }
 
+    // method to check carb req
     public void carbReq(){
         Scanner sc = new Scanner(System.in);
 
@@ -285,6 +286,19 @@ public class IndyFitCalc {
         double carbs = 0.0;
         carbs = (cc*0.6)/4;
         System.out.println("You should consume approximately "+carbs+" grams of carbohydrates per day.");
+    }
+
+    // method to check protein req
+    public void proteinReq() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println(" The Protein Calculator estimates the daily amount of dietary protein adults require to remain healthy.");
+        System.out.println();
+        
+        System.out.print("Enter your weight in kg: ");
+        double weight = sc.nextDouble();
+
+
     }
 }
     

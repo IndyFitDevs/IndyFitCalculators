@@ -111,7 +111,7 @@ public class IndyFitCalc {
             System.out.print("Enter your height in cm: ");
             double height = sc.nextDouble();
 
-            idealWeight = (height-100) + ((height-100)*0.15);
+            idealWeight = (height-100) - ((height-100)*0.15);
         }
 
         System.out.println("Your ideal body weight (IBW) is "+idealWeight+".");

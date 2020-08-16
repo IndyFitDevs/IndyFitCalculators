@@ -228,7 +228,7 @@ public class IndyFitCalc {
             System.out.print("Enter your weight in kg: ");
             double weight = sc.nextDouble();
 
-            System.out.print("Enter your height in cm: ");
+            System.out.print("Enter your height in m: ");
             double height = sc.nextDouble();
 
             double BMI = (weight)/(height*height);
@@ -243,7 +243,7 @@ public class IndyFitCalc {
             System.out.print("Enter your weight in kg: ");
             double weight = sc.nextDouble();
 
-            System.out.print("Enter your height in cm: ");
+            System.out.print("Enter your height in m: ");
             double height = sc.nextDouble();
 
             double BMI = (weight)/(height*height);
@@ -344,8 +344,9 @@ public class IndyFitCalc {
         double weight = sc.nextDouble();
 
         double proteinReq = 0.8*weight;
+        double proteinReq2 = weight;
 
-        System.out.println("You should consume approximately "+proteinReq+" grams of protein per day.");
+        System.out.println("You should consume approximately between "+proteinReq+" and "+proteinReq2+" grams of protein per day.");
     }
 
     // method to check fat req

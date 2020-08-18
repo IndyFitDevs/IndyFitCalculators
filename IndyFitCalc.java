@@ -279,58 +279,86 @@ public class IndyFitCalc {
 
         System.out.println("The Carbohydrates calculator helps to estimates the required amounts of carbohydrates that a person needs each day.");
         System.out.println();
+
+        System.out.println("Select a athlete type: ");
+        System.out.println("1. Standard Athlete \n2. Strength, Power, and Speed Sport Athletes \n3. Endurance/Ultra-Endurance Sport Athletes");
+        int menu  = sc.nextInt();
+
+        if (menu==1){
+            System.out.print("Male or female (M/F): ");
+            char gender = sc.next().charAt(0);
+
+            double BMR = 0.0;
+            double cc = 0.0;
+
+            if (gender == 'm' || gender == 'M') {
+                System.out.print("Enter height in cm: ");
+                double height = sc.nextDouble();
+                System.out.print("Enter weight in kg: ");
+                double weight = sc.nextDouble();
+                System.out.print("Enter age in years: ");
+                double age = sc.nextDouble();
+
+                BMR = (88.362) + (13.397*weight) + (4.799*height) - (5.677*age);
+            }
+            else if (gender == 'F' || gender == 'f') {
+                System.out.print("Enter height in cm: ");
+                double height = sc.nextDouble();
+                System.out.print("Enter weight in kg: ");
+                double weight = sc.nextDouble();
+                System.out.print("Enter age in years: ");
+                double age = sc.nextDouble();
+
+                BMR = (447.593) + (9.247*weight) + (3.098*height) - (4.330*age);
+            }
+
+            System.out.println("Select an activity type:");
+            System.out.println("1. Sedentary (little or no exercise) \n2. Lightly Active (light exercise/sports 1-3 days/week) \n3. Moderately Active (moderate exercise/sports 3-5 days/week) \n4. Very Active (hard exercise/sports 6-7 days a week) \n5. Extra Active (very hard exercise/sports & physical job or 2x training)");
+            int activitySelector = sc.nextInt();
+
+            switch(activitySelector) {
+                case 1: cc = BMR*1.2;
+                        break;
+                case 2: cc = BMR*1.375;
+                        break;
+                case 3: cc = BMR*1.55;
+                        break;
+                case 4: cc = BMR*1.725;
+                        break;
+                case 5: cc = BMR*1.9;
+                        break;
+                default: cc = BMR*1.5;
+                        break;
+            }
+
+            cc = Math.ceil(cc);
+
+            double carbs = 0.0;
+            carbs = (cc*0.6)/4;
+            System.out.println("You should consume approximately "+carbs+" grams of carbohydrates per day.");
+
+        } else if (menu==2) {
+            System.out.print("Enter weight in kg: ");
+            double weight = sc.nextDouble();
+
+            System.out.println("For general preparation, you should consume between "+(weight*4)+" and "+(weight*7)+" grams of carbohydrates a day.");
+            System.out.println("For specific preparation, you should consume between "+(weight*6)+" and "+(weight*10)+" grams of carbohydrates a day.");
+            System.out.println("For taper/competition preparation, you should consume between "+(weight*6)+" and "+(weight*12)+" grams of carbohydrates a day.");
+            System.out.println("For transition preparation, you should consume between "+(weight*4)+" and "+(weight*6)+" grams of carbohydrates a day.");
+
+        } else if (menu==3){
+            System.out.print("Enter weight in kg: ");
+            double weight = sc.nextDouble();
+
+            System.out.println("For general preparation, you should consume between "+(weight*5)+" and "+(weight*7)+" grams of carbohydrates a day.");
+            System.out.println("For specific preparation, you should consume between "+(weight*7)+" and "+(weight*10)+" grams of carbohydrates a day.");
+            System.out.println("For taper/competition preparation, you should consume between "+(weight*10)+" and "+(weight*12)+" grams of carbohydrates a day.");
+            System.out.println("For transition preparation, you should consume between "+(weight*4)+" and "+(weight*6)+" grams of carbohydrates a day.");
+
+        } else {
+            System.out.println("Invalid selection.");
+        }
         
-        System.out.print("Male or female (M/F): ");
-        char gender = sc.next().charAt(0);
-
-        double BMR = 0.0;
-        double cc = 0.0;
-
-        if (gender == 'm' || gender == 'M') {
-            System.out.print("Enter height in cm: ");
-            double height = sc.nextDouble();
-            System.out.print("Enter weight in kg: ");
-            double weight = sc.nextDouble();
-            System.out.print("Enter age in years: ");
-            double age = sc.nextDouble();
-
-            BMR = (88.362) + (13.397*weight) + (4.799*height) - (5.677*age);
-        }
-        else if (gender == 'F' || gender == 'f') {
-            System.out.print("Enter height in cm: ");
-            double height = sc.nextDouble();
-            System.out.print("Enter weight in kg: ");
-            double weight = sc.nextDouble();
-            System.out.print("Enter age in years: ");
-            double age = sc.nextDouble();
-
-            BMR = (447.593) + (9.247*weight) + (3.098*height) - (4.330*age);
-        }
-
-        System.out.println("Select an activity type:");
-        System.out.println("1. Sedentary (little or no exercise) \n2. Lightly Active (light exercise/sports 1-3 days/week) \n3. Moderately Active (moderate exercise/sports 3-5 days/week) \n4. Very Active (hard exercise/sports 6-7 days a week) \n5. Extra Active (very hard exercise/sports & physical job or 2x training)");
-        int activitySelector = sc.nextInt();
-
-        switch(activitySelector) {
-            case 1: cc = BMR*1.2;
-                    break;
-            case 2: cc = BMR*1.375;
-                    break;
-            case 3: cc = BMR*1.55;
-                    break;
-            case 4: cc = BMR*1.725;
-                    break;
-            case 5: cc = BMR*1.9;
-                    break;
-            default: cc = BMR*1.5;
-                    break;
-        }
-
-        cc = Math.ceil(cc);
-
-        double carbs = 0.0;
-        carbs = (cc*0.6)/4;
-        System.out.println("You should consume approximately "+carbs+" grams of carbohydrates per day.");
     }
 
     // method to check protein req
@@ -339,15 +367,44 @@ public class IndyFitCalc {
 
         System.out.println(" The Protein Calculator estimates the daily amount of dietary protein adults require to remain healthy.");
         System.out.println();
+
+        System.out.println("Select a athlete type: ");
+        System.out.println("1. Standard Athlete \n2. Strength, Power, and Speed Sport Athletes \n3. Endurance/Ultra-Endurance Sport Athletes");
+        int menu  = sc.nextInt();
+
+        if (menu==1){
+            System.out.print("Enter your weight in kg: ");
+            double weight = sc.nextDouble();
+
+            double proteinReq = 0.8*weight;
+            double proteinReq2 = weight;
+
+            System.out.println("You should consume approximately between "+proteinReq+" and "+proteinReq2+" grams of protein per day.");
+
+        } else if (menu==2) {
+            System.out.print("Enter weight in kg: ");
+            double weight = sc.nextDouble();
+
+            System.out.println("For general preparation, you should consume between "+(weight*1.5)+" and "+(weight*1.7)+" grams of protein a day.");
+            System.out.println("For specific preparation, you should consume between "+(weight*1.5)+" and "+(weight*1.7)+" grams of protein a day.");
+            System.out.println("For taper/competition preparation, you should consume between "+(weight*1.2)+" and "+(weight*1.7)+" grams of protein a day.");
+            System.out.println("For transition preparation, you should consume between "+(weight*0.8)+" and "+(weight*1.2)+" grams of protein a day.");
+
+        } else if (menu==3){
+            System.out.print("Enter weight in kg: ");
+            double weight = sc.nextDouble();
+
+            System.out.println("For general preparation, you should consume between "+(weight*1.7)+" and "+(weight*2)+" grams of protein a day.");
+            System.out.println("For specific preparation, you should consume between "+(weight*1.2)+" and "+(weight*1.7)+" grams of protein a day.");
+            System.out.println("For taper/competition preparation, you should consume between "+(weight*1.2)+" and "+(weight*1.7)+" grams of protein a day.");
+            System.out.println("For transition preparation, you should consume between "+(weight*0.8)+" and "+(weight*1.2)+" grams of protein a day.");
+
+        } else {
+            System.out.println("Invalid selection.");
+        }
         
-        System.out.print("Enter your weight in kg: ");
-        double weight = sc.nextDouble();
-
-        double proteinReq = 0.8*weight;
-        double proteinReq2 = weight;
-
-        System.out.println("You should consume approximately between "+proteinReq+" and "+proteinReq2+" grams of protein per day.");
     }
+
 
     // method to check fat req
     public static void fatReq() {
@@ -356,57 +413,86 @@ public class IndyFitCalc {
         System.out.println("The Fat calculator helps to estimates the required amounts of fat that a person needs each day.");
         System.out.println();
         
-        System.out.print("Male or female (M/F): ");
-        char gender = sc.next().charAt(0);
+        System.out.println("Select a athlete type: ");
+        System.out.println("1. Standard Athlete \n2. Strength, Power, and Speed Sport Athletes \n3. Endurance/Ultra-Endurance Sport Athletes");
+        int menu  = sc.nextInt();
 
-        double BMR = 0.0;
-        double cc = 0.0;
+        if (menu==1){
+            System.out.print("Male or female (M/F): ");
+            char gender = sc.next().charAt(0);
 
-        if (gender == 'm' || gender == 'M') {
-            System.out.print("Enter height in cm: ");
-            double height = sc.nextDouble();
+            double BMR = 0.0;
+            double cc = 0.0;
+
+            if (gender == 'm' || gender == 'M') {
+                System.out.print("Enter height in cm: ");
+                double height = sc.nextDouble();
+                System.out.print("Enter weight in kg: ");
+                double weight = sc.nextDouble();
+                System.out.print("Enter age in years: ");
+                double age = sc.nextDouble();
+
+                BMR = (88.362) + (13.397*weight) + (4.799*height) - (5.677*age);
+            }
+            else if (gender == 'F' || gender == 'f') {
+                System.out.print("Enter height in cm: ");
+                double height = sc.nextDouble();
+                System.out.print("Enter weight in kg: ");
+                double weight = sc.nextDouble();
+                System.out.print("Enter age in years: ");
+                double age = sc.nextDouble();
+
+                BMR = (447.593) + (9.247*weight) + (3.098*height) - (4.330*age);
+            }
+
+            System.out.println("Select an activity type:");
+            System.out.println("1. Sedentary (little or no exercise) \n2. Lightly Active (light exercise/sports 1-3 days/week) \n3. Moderately Active (moderate exercise/sports 3-5 days/week) \n4. Very Active (hard exercise/sports 6-7 days a week) \n5. Extra Active (very hard exercise/sports & physical job or 2x training)");
+            int activitySelector = sc.nextInt();
+
+            switch(activitySelector) {
+                case 1: cc = BMR*1.2;
+                        break;
+                case 2: cc = BMR*1.375;
+                        break;
+                case 3: cc = BMR*1.55;
+                        break;
+                case 4: cc = BMR*1.725;
+                        break;
+                case 5: cc = BMR*1.9;
+                        break;
+                default: cc = BMR*1.5;
+                        break;
+            }
+
+            cc = Math.ceil(cc);
+
+            double fat = 0.0;
+            fat = (cc*0.3)/9;
+            System.out.println("You should consume approximately "+fat+" grams of fat per day.");
+
+        } else if (menu==2) {
             System.out.print("Enter weight in kg: ");
             double weight = sc.nextDouble();
-            System.out.print("Enter age in years: ");
-            double age = sc.nextDouble();
 
-            BMR = (88.362) + (13.397*weight) + (4.799*height) - (5.677*age);
-        }
-        else if (gender == 'F' || gender == 'f') {
-            System.out.print("Enter height in cm: ");
-            double height = sc.nextDouble();
+            System.out.println("For general preparation, you should consume between "+(weight*1.5)+" and "+(weight*2)+" grams of fat a day.");
+            System.out.println("For specific preparation, you should consume between "+(weight*1)+" and "+(weight*1.5)+" grams of fat a day.");
+            System.out.println("For taper/competition preparation, you should consume between "+(weight*0.8)+" and "+(weight*1.2)+" grams of fat a day.");
+            System.out.println("For transition preparation, you should consume between "+(weight*1)+" and "+(weight*1.5)+" grams of fat a day.");
+
+        } else if (menu==3){
             System.out.print("Enter weight in kg: ");
             double weight = sc.nextDouble();
-            System.out.print("Enter age in years: ");
-            double age = sc.nextDouble();
 
-            BMR = (447.593) + (9.247*weight) + (3.098*height) - (4.330*age);
+            System.out.println("For general preparation, you should consume between "+(weight*1.5)+" and "+(weight*2)+" grams of fat a day.");
+            System.out.println("For specific preparation, you should consume between "+(weight*1)+" and "+(weight*1.5)+" grams of fat a day.");
+            System.out.println("For taper/competition preparation, you should consume between "+(weight*0.8)+" and "+(weight*1.2)+" grams of fat a day.");
+            System.out.println("For transition preparation, you should consume between "+(weight*1)+" and "+(weight*1.5)+" grams of fat a day.");
+
+        } else {
+            System.out.println("Invalid selection.");
         }
 
-        System.out.println("Select an activity type:");
-        System.out.println("1. Sedentary (little or no exercise) \n2. Lightly Active (light exercise/sports 1-3 days/week) \n3. Moderately Active (moderate exercise/sports 3-5 days/week) \n4. Very Active (hard exercise/sports 6-7 days a week) \n5. Extra Active (very hard exercise/sports & physical job or 2x training)");
-        int activitySelector = sc.nextInt();
-
-        switch(activitySelector) {
-            case 1: cc = BMR*1.2;
-                    break;
-            case 2: cc = BMR*1.375;
-                    break;
-            case 3: cc = BMR*1.55;
-                    break;
-            case 4: cc = BMR*1.725;
-                    break;
-            case 5: cc = BMR*1.9;
-                    break;
-            default: cc = BMR*1.5;
-                    break;
-        }
-
-        cc = Math.ceil(cc);
-
-        double fat = 0.0;
-        fat = (cc*0.3)/9;
-        System.out.println("You should consume approximately "+fat+" grams of fat per day.");
+        
     }
     
     public static void TDEE() {
